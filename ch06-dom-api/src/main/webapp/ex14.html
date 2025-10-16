@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ 	Event Propagation(Bubbling)
+ 	어떤 이벤트가 발생했을 때, 그 이벤트가 상위/하위 Element로 전파되어 가는 것
+ 	
+ 	text > header > inner-div > outer-div 
+ */
+window.addEventListener("load", () => {
+	document
+		.querySelector("#outer-div")
+		.addEventListener("click", () => {
+			console.log("outer clicked");
+	});
+
+
+		document
+			.querySelector("#inner-div")
+			.addEventListener("click", () => {
+				console.log("inner clicked");
+		});
+
+		document
+			.querySelector("#header")
+			.addEventListener("click", () => {
+				console.log("header clicked");
+		});
+	
+		document
+			.querySelector("#text")
+			.addEventListener("click", () => {
+				console.log("text clicked");
+		});
+});
+</script>
+</head>
+<body>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>7. Event Propagation(Bubbling)</h2>
+	
+	<div id='outer-div'>
+		<div id='inner-div'>
+			<h1 id='header'>
+				<span id='text'>text</span>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>
