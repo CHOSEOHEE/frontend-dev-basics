@@ -5,18 +5,16 @@
 <script type="text/javascript" src="jquery/jquery-simple.js"></script>
 <script>
 $(function(){
+
 	var $obj = $(".par");
-	$obj.click(function(){
+	
+	$obj.click(function() {
 		console.log("clicked:" + this);
 	});
 
 	setTimeout(function(){
 		$obj.css('color', 'red');
 	}, 2000);
-
-	setTimeout(function(){
-		$("p").css('font-weight', 'bold');
-	}, 4000);
 
 });
 </script>
